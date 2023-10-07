@@ -4,5 +4,6 @@ export default defineNuxtConfig({
   modules: [
     '@nuxtjs/eslint-module',
     '@pinia/nuxt',
+    '@nuxtjs/tailwindcss',
   ],
 })
