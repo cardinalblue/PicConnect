@@ -2,7 +2,6 @@
 import confetti from 'canvas-confetti'
 import peopleMap from '@/public/peopleMap.json'
 
-
 interface PeopleObject {
   name: string
   title: string
@@ -26,6 +25,9 @@ function selectNewPerson() {
     nameArray.value = nameArray.value.filter((_, idx) => idx !== randomValue.value)
   
   randomValue.value = Math.floor(Math.random() * (nameArray.value.length - 1))
+  if (randomValue.value < 0) 
+    return
+  
   const selectedPersonName = nameArray.value[randomValue.value]
 
   const correctOption = peopleRecord[selectedPersonName].title
@@ -64,15 +66,18 @@ onMounted(() => {
       </div>
     </template>
     -->
-    <div v-if="randomValue >= 0" class="w-full flex flex-col gap-4 items-center overflow-hidden">
+    <div v-if="nameArray.length === 0" class="text-3xl p-4">
+      You have seen all the members! yay
+    </div>
+    <div v-else-if="randomValue >= 0" class="w-full flex flex-col gap-4 items-center overflow-hidden">
       <div class="relative px-4 flex justify-center h-96 w-full">
         <Transition name="rotate">
-          <div v-if="showPic" class="w-full h-96">
-            <img :src="`pd/${nameArray[randomValue]}/thumbnail.png`" class="md:hidden object-contain h-96 w-full" alt="No image" height="100%">
-            <img :src="`pd/${nameArray[randomValue]}/thumbnail.png`" class="hidden md:block object-contain" alt="No image" :width="200" :height="200">
+          <div v-if="showPic" class="w-full h-96 flex justify-center items-center">
+            <img :src="`pd/${nameArray[randomValue]}/thumbnail.png`" class="md:hidden object-contain h-96 w-full" :alt="selectedPerson.name" height="100%">
+            <img :src="`pd/${nameArray[randomValue]}/thumbnail.png`" class="hidden md:block object-contain h-96 w-full" :alt="selectedPerson.name">
           </div>
-          <div v-else class="absolute px-4 w-full h-full">
-            <div class="card bg-white w-full h-full text-black p-4">
+          <div v-else class="absolute flex items-center justify-center px-4 w-full h-full">
+            <div class="card bg-white w-full md:w-96 h-full md:h-96 text-black p-4">
               <div class="text-2xl font-bold">
                 {{ selectedPerson.name }}
               </div>
