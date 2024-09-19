@@ -20,11 +20,7 @@ defineProps<{
     </div>
     <div>
       <div
-        class="text-lg"
-        :class="{
-          'pb-2': displayStyle === 'ALL',
-          'pb-24': displayStyle === 'FACT',
-        }"
+        class="text-lg pb-2"
       >
         And {{ name }} also like to
       </div>
