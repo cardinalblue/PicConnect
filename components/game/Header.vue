@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full h-32 px-6 flex items-center justify-between">
+  <div class="w-full h-24 px-6 flex items-center justify-between">
     <div class="font-bold text-2xl caprasimo">
       PicConnect
     </div>
