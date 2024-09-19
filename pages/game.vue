@@ -74,6 +74,7 @@ function onSelectOption(option: string) {
 
 function viewMember(name: string) {
   selectedPerson.value = peopleRecord[name]
+  showAllInfo.value = true
   isHistoryModelOpen.value = false
 }
 
@@ -110,13 +111,13 @@ onMounted(() => {
       </div>
       <div v-else-if="selectedPerson" class="w-full flex flex-col gap-4 items-center">
         <div 
-          class="relative flex justify-center min-h-0 w-full h-[calc(100vh-15rem)]"
+          class="relative flex justify-center min-h-0 w-full h-[calc(100dvh-9rem)]"
         >
           <Transition name="rotate">
             <div v-if="hasNotSelectAnswer" class="relative w-full h-full">
               <CardContainer class="relative bg-white py-8 z-20">
                 <div class="h-full flex flex-col gap-2 justify-center items-center">
-                  <Image :src="imageSrc" :alt="selectedPerson.name" class="flex-1" img-class="h-full w-full object-cover" />
+                  <Image :src="imageSrc" :alt="selectedPerson.name" class="flex-1 max-h-80" img-class="h-full max-h-80 w-full object-cover" />
                   <div class="text-3xl font-bold">
                     {{ selectedPerson.name }}
                   </div>
@@ -128,7 +129,7 @@ onMounted(() => {
               </CardContainer>
               <img src="/svgs/bottom_shadow.svg" class="absolute z-10 -bottom-8 w-full">
             </div>
-            <div v-else class="absolute flex flex-col items-center justify-center w-full h-[calc(100vh-20rem)]">
+            <div v-else class="absolute flex flex-col items-center justify-center w-full h-full">
               <Card
                 :name="selectedPerson.name"
                 :title="selectedPerson.title"
