@@ -115,7 +115,7 @@ onMounted(() => {
         >
           <Transition name="rotate">
             <div v-if="hasNotSelectAnswer" class="relative w-full h-full">
-              <CardContainer class="relative bg-white py-8 z-20">
+              <CardContainer class="relative bg-white h-full py-8 z-20">
                 <div class="h-full flex flex-col gap-2 justify-center items-center">
                   <Image :src="imageSrc" :alt="selectedPerson.name" class="flex-1 max-h-80" img-class="h-full max-h-80 w-full object-cover" />
                   <div class="text-3xl font-bold">

@@ -9,7 +9,7 @@ defineProps<{
 </script>
 
 <template>
-  <CardContainer class="bg-white pt-10 pb-4 shadow-[10px_10px]">
+  <CardContainer class="bg-white pt-10 pb-4 h-full shadow-[10px_10px]">
     <div v-if="displayStyle === 'ALL'" class="text-2xl">
       <div class="text-lg pb-2">
         {{ name }} is a
