@@ -9,5 +9,8 @@ export default defineNuxtConfig({
   colorMode: {
     preference: 'light',
   },
+  css: [
+    '@/assets/global.css',
+  ],
 })
 

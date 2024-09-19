@@ -9,12 +9,12 @@ defineProps<{
 </script>
 
 <template>
-  <div class="bg-white w-full h-full rounded-3xl overflow-hidden border border-solid border-black py-10 px-5 flex flex-col justify-between text-center">
-    <div v-if="displayStyle === 'ALL'" class="text-2xl font-bold">
+  <CardContainer class="bg-white pt-10 pb-4 shadow-[10px_10px]">
+    <div v-if="displayStyle === 'ALL'" class="text-2xl">
       <div class="text-lg pb-2">
         {{ name }} is a
       </div>
-      <div class="text-3xl font-bold">
+      <div class="text-3xl roboto-black font-extrabold">
         {{ title }}
       </div>
     </div>
@@ -28,16 +28,16 @@ defineProps<{
       >
         And {{ name }} also like to
       </div>
-      <div class="text-3xl font-bold">
+      <div class="text-3xl roboto-black font-extrabold">
         {{ fact }}
       </div>
     </div>
-    <div class="w-full flex items-center">
+    <div class="w-full flex items-center gap-2">
       <Image :src="imageSrc" alt="image" img-class="w-24 h-24" />
       <div class="flex-1 flex flex-col items-center justify-between">
         <span class="text-xl font-bold"> {{ name }} </span>
         <span> {{ displayStyle === 'ALL' ? 'Go Say Hi! 🤩👋' : title }} </span>
       </div>
     </div>
-  </div>
+  </CardContainer>
 </template>

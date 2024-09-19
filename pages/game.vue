@@ -13,17 +13,26 @@ const nameArray = ref(Object.keys(peopleRecord).filter(name => peopleRecord[name
 const allJobTitle = new Set(Object.values(peopleRecord).map(obj => obj.title))
 const randomValue = ref(-1)
 
-const selectedPerson = computed(() => peopleRecord[nameArray.value[randomValue.value]])
+const selectedPerson = ref<PeopleObject>()
+watch(randomValue, () => {
+  selectedPerson.value =  peopleRecord[nameArray.value[randomValue.value]]
+})
+
 const leftOption = ref('')
 const rightOption = ref('')
 
-const isAnswerCorrect = ref(false)
-// swiping
-const showPic = ref(true)
+const showAllInfo = ref(false)
+const hasNotSelectAnswer = ref(true)
 
 const imageSrc = computed(() => `pd/${nameArray.value[randomValue.value]}/thumbnail.png`)
 
+const visitedMembers = reactive<string[]>([])
+
 function selectNewPerson() {
+  // don't do anything if there's only one guy left
+  if (nameArray.value.length === 1)
+    return
+
   if (randomValue.value !== -1) 
     nameArray.value = nameArray.value.filter((_, idx) => idx !== randomValue.value)
   
@@ -41,20 +50,28 @@ function selectNewPerson() {
   const options = [correctOption, otherOption].sort(() => 0.5 - Math.random())
   leftOption.value = options[0]
   rightOption.value = options[1]
-  showPic.value = true
+  hasNotSelectAnswer.value = true
 }
 
 function onSelectOption(option: string) {
-  if (option === selectedPerson.value.title)  {
+  visitedMembers.push(nameArray.value[randomValue.value])
+  if (option === selectedPerson.value?.title)  {
     confetti()
-    isAnswerCorrect.value = true
+    showAllInfo.value = false
   }
   else {
-    isAnswerCorrect.value = false
+    showAllInfo.value = true
   }
 
-  showPic.value = false
+  hasNotSelectAnswer.value = false
   //selectNewPerson()
+}
+
+const isHistoryModelOpen = ref(false)
+
+function viewMember(name: string) {
+  selectedPerson.value = peopleRecord[name]
+  isHistoryModelOpen.value = false
 }
 
 onMounted(() => {
@@ -63,9 +80,17 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="w-screen h-screen">
-    <GameHeader />
-    <!--
+  <div
+    class="w-screen h-screen px-4"
+    :class="{
+      'bg-light-purple-100': randomValue % 3 === 0,
+      'bg-light-green-100': randomValue % 3 === 1,
+      'bg-kinda-pink-200': randomValue % 3 === 2,
+    }"
+  >
+    <div class="h-full w-full mx-auto md:w-[365px]">
+      <GameHeader />
+      <!--
     <template v-for="(people, nameKey) in peopleRecord" :key="people.name">
       <div>
         <img :src="`people_images/${nameKey}.png`" :width="200" :height="200">
@@ -74,49 +99,82 @@ onMounted(() => {
       </div>
     </template>
     -->
-    <div v-if="nameArray.length === 0" class="text-3xl p-4">
-      You have seen all the members! yay
-    </div>
-    <div v-else-if="randomValue >= 0" class="w-full flex flex-col gap-4 items-center overflow-hidden">
-      <div class="relative px-4 flex justify-center h-[calc(100vh-20rem)] w-full">
-        <Transition name="rotate">
-          <div v-if="showPic" class="w-full h-96 flex justify-center items-center">
-            <Image :src="imageSrc" :alt="selectedPerson.name" />
-          </div>
-          <div v-else class="absolute flex items-center justify-center px-4 w-full h-[calc(100vh-20rem)]">
-            <Card
-              :name="selectedPerson.name"
-              :title="selectedPerson.title"
-              :fact="selectedPerson.fact"
-              :image-src="imageSrc"
-              :display-style="isAnswerCorrect ? 'FACT' : 'ALL'"
-            />
-          </div>
-        </Transition>
+      <div v-if="selectedPerson" class="w-full flex flex-col gap-4 items-center">
+        <div 
+          class="relative flex justify-center w-full h-[calc(100vh-18rem)]"
+        >
+          <Transition name="rotate">
+            <div v-if="hasNotSelectAnswer" class="relative w-full h-full">
+              <CardContainer class="relative bg-white py-8 z-20">
+                <div class="flex flex-col gap-6 justify-center items-center">
+                  <Image :src="imageSrc" :alt="selectedPerson.name" img-class="flex-1" />
+                  <div class="text-3xl font-bold">
+                    {{ selectedPerson.name }}
+                  </div>
+                  <div class="flex flex-col justify-between gap-6 max-w-full">
+                    <UButton class="w-80 justify-center" color="green" truncate :label="leftOption" @click="() => onSelectOption(leftOption)" />
+                    <UButton class="w-80 justify-center bg-purple-400 active:bg-purple-500 hover:bg-purple-500" truncate :label="rightOption" @click="() => onSelectOption(rightOption)" />
+                  </div>
+                </div>
+              </CardContainer>
+              <img src="/svgs/bottom_shadow.svg" class="absolute z-10 -bottom-8 w-full">
+            </div>
+            <div v-else class="absolute flex items-center justify-center w-full h-[calc(100vh-20rem)]">
+              <Card
+                :name="selectedPerson.name"
+                :title="selectedPerson.title"
+                :fact="selectedPerson.fact!"
+                :image-src="imageSrc"
+                :display-style="showAllInfo ? 'ALL' : 'FACT'"
+              />
+            </div>
+          </Transition>
+        </div>
+        <div v-if="!hasNotSelectAnswer" class="flex justify-around w-full pt-8">
+          <UButton class="w-40 text-black justify-center bg-super-light-yellow-50 active:bg-super-light-yellow-200 hover:bg-super-light-yellow-200" label="History" @click="() => isHistoryModelOpen = true" />
+          <UButton class="w-40 text-black justify-center bg-light-yellow-200 active:bg-light-yellow-300 hover:bg-light-yellow-300" label="Next" @click="() => selectNewPerson()" />
+        </div>
       </div>
-      <div class="flex flex-col md:flex-row justify-between gap-2 md:gap-8 max-w-full">
-        <UButton color="red" class="w-80" :onclick="() => onSelectOption(leftOption)">
-          {{ leftOption }} 
-        </UButton>
-        <UButton color="blue" class="w-80" :onclick="() => onSelectOption(rightOption)">
-          {{ rightOption }}
-        </UButton>
-      </div>
-      <UButton v-if="!showPic" color="primary" class="w-40" :onclick="() => selectNewPerson()">
-        Next
-      </UButton>
     </div>
+    <Modal v-model="isHistoryModelOpen">
+      <CardContainer class="mx-auto w-96 max-w-screen h-[500px] relative bg-light-purple-100 overflow-hidden flex flex-col gap-6">
+        <div class="pt-10 text-3xl font-bold text-black">
+          Pokédex
+        </div>
+        <div class="grid grid-cols-3 gap-3 overflow-scroll pb-2">
+          <template v-for="person in peopleRecord" :key="person.name">
+            <div 
+              v-if="visitedMembers.includes(person.name.toLowerCase().replaceAll(' ', ''))"
+              class="relative w-fit h-fit overflow-hidden cursor-pointer"
+              @click="() => viewMember(person.name.toLowerCase().replaceAll(' ', ''))"
+            >
+              <Image 
+                :src="`pd/${person.name.toLowerCase().replaceAll(' ', '')}/thumbnail.png`"
+                :alt="person.name" 
+                class="border border-[#000] border-solid"
+                img-class="w-24 h-24 object-cover"
+              />
+              <!-- mask -->
+              <div class="absolute left-[1px] bottom-[1px] w-24 h-24 rounded-3xl bg-gradient-to-b from-transparent to-black" />
+              <span class="absolute bottom-1 left-[1px] w-24 px-1 text-white text-sm"> {{ person.name }} </span>
+            </div>
+            <div v-else class="w-24 h-24 overflow-hidden bg-black rounded-3xl border border-[#000] border-solid" />
+          </template>
+        </div>
+        <UButton icon="i-heroicons-x-mark-20-solid" class="bg-purple-400 active:bg-purple-500 hover:bg-purple-500 w-10 h-10 items-center justify-center absolute right-6 top-6" @click="isHistoryModelOpen = false" />
+      </CardContainer>
+    </Modal>
   </div>
 </template>
 
 <style scoped>
 .rotate-enter-active {
-  transition: all 0.5s linear;
-  transition-delay: 0.5s;
+  transition: all 0.3s linear;
+  transition-delay: 0.3s;
 }
 
 .rotate-leave-active {
-  transition: all 0.5s linear;
+  transition: all 0.3s linear;
 }
 
 .rotate-enter-from,
