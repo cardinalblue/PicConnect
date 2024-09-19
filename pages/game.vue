@@ -26,7 +26,7 @@ const isHistoryModelOpen = ref(false)
 const showSpecialEndingImage = ref(false)
 
 // for easier use
-const imageSrc = computed(() => `pd/${nameArray.value[randomValue.value]}/thumbnail.png`)
+const imageSrc = computed(() => `pd/${selectedPerson.value?.name.toLowerCase().replaceAll(' ', '') || 'not_selected' }/thumbnail.png`)
 
 // record for seen members
 const visitedMembers = reactive<string[]>([])
