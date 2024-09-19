@@ -84,6 +84,12 @@ onMounted(() => {
               <div>
                 {{ selectedPerson.title }}
               </div>
+              <div class="pt-4">
+                Fact:
+              </div>
+              <div>
+                {{ selectedPerson.fact }}
+              </div>
             </div>
           </div>
         </Transition>
