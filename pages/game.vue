@@ -84,7 +84,7 @@ onMounted(() => {
 
 <template>
   <div
-    class="w-screen h-screen px-4"
+    class="w-[100dvw] h-[100dvh] px-4 overflow-hidden"
     :class="{
       'bg-light-purple-100': randomValue % 3 === 0,
       'bg-light-green-100': randomValue % 3 === 1,
@@ -110,25 +110,25 @@ onMounted(() => {
       </div>
       <div v-else-if="selectedPerson" class="w-full flex flex-col gap-4 items-center">
         <div 
-          class="relative flex justify-center w-full h-[calc(100vh-18rem)]"
+          class="relative flex justify-center min-h-0 w-full h-[calc(100vh-15rem)]"
         >
           <Transition name="rotate">
             <div v-if="hasNotSelectAnswer" class="relative w-full h-full">
               <CardContainer class="relative bg-white py-8 z-20">
-                <div class="flex flex-col gap-6 justify-center items-center">
-                  <Image :src="imageSrc" :alt="selectedPerson.name" img-class="flex-1" />
+                <div class="h-full flex flex-col gap-2 justify-center items-center">
+                  <Image :src="imageSrc" :alt="selectedPerson.name" class="flex-1" img-class="h-full w-full object-cover" />
                   <div class="text-3xl font-bold">
                     {{ selectedPerson.name }}
                   </div>
-                  <div class="flex flex-col justify-between gap-6 max-w-full">
-                    <UButton class="w-80 justify-center" color="green" truncate :label="leftOption" @click="() => onSelectOption(leftOption)" />
-                    <UButton class="w-80 justify-center bg-purple-400 active:bg-purple-500 hover:bg-purple-500" truncate :label="rightOption" @click="() => onSelectOption(rightOption)" />
+                  <div class="flex flex-col h-28 justify-between gap-6 max-w-full">
+                    <UButton class="w-72 justify-center" color="green" truncate :label="leftOption" @click="() => onSelectOption(leftOption)" />
+                    <UButton class="w-72 justify-center bg-purple-400 active:bg-purple-500 hover:bg-purple-500" truncate :label="rightOption" @click="() => onSelectOption(rightOption)" />
                   </div>
                 </div>
               </CardContainer>
               <img src="/svgs/bottom_shadow.svg" class="absolute z-10 -bottom-8 w-full">
             </div>
-            <div v-else class="absolute flex items-center justify-center w-full h-[calc(100vh-20rem)]">
+            <div v-else class="absolute flex flex-col items-center justify-center w-full h-[calc(100vh-20rem)]">
               <Card
                 :name="selectedPerson.name"
                 :title="selectedPerson.title"
@@ -136,12 +136,12 @@ onMounted(() => {
                 :image-src="imageSrc"
                 :display-style="showAllInfo ? 'ALL' : 'FACT'"
               />
+              <div v-if="!hasNotSelectAnswer" class="flex justify-around w-full pt-8">
+                <UButton class="w-40 text-black justify-center bg-super-light-yellow-50 active:bg-super-light-yellow-200 hover:bg-super-light-yellow-200" label="History" @click="() => isHistoryModelOpen = true" />
+                <UButton class="w-40 text-black justify-center bg-light-yellow-200 active:bg-light-yellow-300 hover:bg-light-yellow-300" label="Next" @click="() => selectNewPerson()" />
+              </div>
             </div>
           </Transition>
-        </div>
-        <div v-if="!hasNotSelectAnswer" class="flex justify-around w-full pt-8">
-          <UButton class="w-40 text-black justify-center bg-super-light-yellow-50 active:bg-super-light-yellow-200 hover:bg-super-light-yellow-200" label="History" @click="() => isHistoryModelOpen = true" />
-          <UButton class="w-40 text-black justify-center bg-light-yellow-200 active:bg-light-yellow-300 hover:bg-light-yellow-300" label="Next" @click="() => selectNewPerson()" />
         </div>
       </div>
     </div>

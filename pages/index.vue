@@ -1,5 +1,5 @@
 <template>
-  <div class="relative w-screen h-screen bg-light-purple-100">
+  <div class="relative w-[100dvw] h-[100dvh] overflow-hidden bg-light-purple-100">
     <Transition appear>
       <div class="relative z-20 h-full flex flex-col justify-center items-center gap-28">
         <div class="flex flex-col justify-center items-center gap-4">
