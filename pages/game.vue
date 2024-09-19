@@ -8,30 +8,34 @@ interface PeopleObject {
   fact?: string
 }
 
+// people info
 const peopleRecord: Record<string, PeopleObject> = peopleMap as Record<string, any>
 const nameArray = ref(Object.keys(peopleRecord).filter(name => peopleRecord[name].fact))
 const allJobTitle = new Set(Object.values(peopleRecord).map(obj => obj.title))
 const randomValue = ref(-1)
-
 const selectedPerson = ref<PeopleObject>()
-watch(randomValue, () => {
-  selectedPerson.value =  peopleRecord[nameArray.value[randomValue.value]]
-})
 
+// options
 const leftOption = ref('')
 const rightOption = ref('')
 
+// display checking
 const showAllInfo = ref(false)
 const hasNotSelectAnswer = ref(true)
+const isHistoryModelOpen = ref(false)
+const showSpecialEndingImage = ref(false)
 
+// for easier use
 const imageSrc = computed(() => `pd/${nameArray.value[randomValue.value]}/thumbnail.png`)
 
+// record for seen members
 const visitedMembers = reactive<string[]>([])
-
 function selectNewPerson() {
   // don't do anything if there's only one guy left
-  if (nameArray.value.length === 1)
+  if (nameArray.value.length === 1) {
+    showSpecialEndingImage.value = true
     return
+  }
 
   if (randomValue.value !== -1) 
     nameArray.value = nameArray.value.filter((_, idx) => idx !== randomValue.value)
@@ -39,7 +43,8 @@ function selectNewPerson() {
   randomValue.value = Math.floor(Math.random() * (nameArray.value.length - 1))
   if (randomValue.value < 0) 
     return
-  
+  selectedPerson.value =  peopleRecord[nameArray.value[randomValue.value]]
+
   const selectedPersonName = nameArray.value[randomValue.value]
 
   const correctOption = peopleRecord[selectedPersonName].title
@@ -66,8 +71,6 @@ function onSelectOption(option: string) {
   hasNotSelectAnswer.value = false
   //selectNewPerson()
 }
-
-const isHistoryModelOpen = ref(false)
 
 function viewMember(name: string) {
   selectedPerson.value = peopleRecord[name]
@@ -99,7 +102,13 @@ onMounted(() => {
       </div>
     </template>
     -->
-      <div v-if="selectedPerson" class="w-full flex flex-col gap-4 items-center">
+      <div v-if="showSpecialEndingImage">
+        <div class="caprasimo text-5xl">
+          YOU DID IT!!!
+        </div>
+        <Image src="/ending.gif" img-class="w-96 h-auto" />
+      </div>
+      <div v-else-if="selectedPerson" class="w-full flex flex-col gap-4 items-center">
         <div 
           class="relative flex justify-center w-full h-[calc(100vh-18rem)]"
         >
