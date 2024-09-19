@@ -1,0 +1,560 @@
+{
+  "aaronchiu": {
+    "title": "iOS Developer for Automated Testing (QA)",
+    "name": "Aaron Chiu"
+  },
+  "aaronni": {
+    "title": "iOS Developer",
+    "name": "Aaron Ni"
+  },
+  "alexchen": {
+    "title": "Product Manager",
+    "name": "Alex Chen"
+  },
+  "alfredshen": {
+    "title": "Recruiter",
+    "name": "Alfred Shen"
+  },
+  "alicetams": {
+    "title": "Product Marketer",
+    "name": "Alice Tams"
+  },
+  "allenlin": {
+    "title": "Machine Learning Intern",
+    "name": "Allen Lin",
+    "fact": "Playing fire dance"
+  },
+  "altheagere": {
+    "title": "Community Specialist",
+    "name": "Althea Gere"
+  },
+  "ameliaboomer": {
+    "title": "Marketing Manager",
+    "name": "Amelia Boomer"
+  },
+  "amyliu": {
+    "title": "Product Manager",
+    "name": "Amy Liu"
+  },
+  "anahernandez": {
+    "title": "Marketing Specialist",
+    "name": "Ana Hernandez"
+  },
+  "andrewhsu": {
+    "title": "Developer Intern",
+    "name": "Andrew Hsu"
+  },
+  "andyfang": {
+    "title": "Product Manager(Explore)",
+    "name": "Andy Fang"
+  },
+  "andylee": {
+    "title": "User Acquisition Specialist",
+    "name": "Andy Lee"
+  },
+  "angelating": {
+    "title": "Director of Product Management",
+    "name": "Angela Ting"
+  },
+  "annalasko": {
+    "title": "Marketing Intern (New Products)",
+    "name": "Anna Lasko",
+    "fact": "Lu rou fan (卤肉饭), paired with tomato scrambled eggs (番茄炒蛋)"
+  },
+  "annaohyama": {
+    "title": "Visual Content Curator",
+    "name": "Anna Ohyama"
+  },
+  "annetan": {
+    "title": "Testing & Office Intern",
+    "name": "Anne Tan"
+  },
+  "anniechen": {
+    "title": "Design Operations Specialist",
+    "name": "Annie Chen"
+  },
+  "annyyang": {
+    "title": "ML Engineer",
+    "name": "Anny Yang",
+    "fact": "Collecting Michelin star restaurants around the world"
+  },
+  "ansenhuang": {
+    "title": "Product Manager",
+    "name": "Ansen Huang"
+  },
+  "bradlee": {
+    "title": "Backend Developer",
+    "name": "Brad Lee"
+  },
+  "brianhan": {
+    "title": "Frontend Developer Intern",
+    "name": "Brian Han"
+  },
+  "cerseishih": {
+    "title": "Operations Manager",
+    "name": "Cersei Shih"
+  },
+  "charlesku": {
+    "title": "iOS Developer(Staff)",
+    "name": "Charles Ku"
+  },
+  "charlestseng": {
+    "title": "Product Manager for Explore",
+    "name": "Charles Tseng"
+  },
+  "ching-meichen": {
+    "title": "Co-Founder",
+    "name": "Ching-Mei Chen"
+  },
+  "chrischen": {
+    "title": "Product Design Manager",
+    "name": "Chris Chen"
+  },
+  "chrislo": {
+    "title": "User Support Intern",
+    "name": "Chris Lo"
+  },
+  "chrissylee": {
+    "title": "Testing & Office Intern",
+    "name": "Chrissy Lee"
+  },
+  "christinechen": {
+    "title": "Community Manager",
+    "name": "Christine Chen"
+  },
+  "christinelin": {
+    "title": "Accounting Specialist",
+    "name": "Christine Lin"
+  },
+  "cindywang": {
+    "title": "Product Consultant",
+    "name": "Cindy Wang"
+  },
+  "citradewihartono": {
+    "title": "Product Marketing Associate for Explore",
+    "name": "Citra Dewi Hartono"
+  },
+  "cj(chaojung)chang": {
+    "title": "Product Manager",
+    "name": "CJ(ChaoJung) Chang"
+  },
+  "danielruan": {
+    "title": "Testing & Office Intern",
+    "name": "Daniel Ruan"
+  },
+  "daphneshen": {
+    "title": "Marketing Specialist",
+    "name": "Daphne Shen"
+  },
+  "dar-yenchen": {
+    "title": "Machine Learning Engineer",
+    "name": "Dar-Yen Chen"
+  },
+  "delphinelin": {
+    "title": "Visual Design Manager",
+    "name": "Delphine Lin"
+  },
+  "devinlai": {
+    "title": "Senior iOS Developer",
+    "name": "Devin Lai"
+  },
+  "easonchen": {
+    "title": "Machine Learning Intern",
+    "name": "Eason Chen"
+  },
+  "easoncheng": {
+    "title": "Software Developer for Testing",
+    "name": "Eason Cheng"
+  },
+  "eileenho": {
+    "title": "Associate Engineering Manager",
+    "name": "Eileen Ho",
+    "fact": "An athlete, musician, and mom of 2"
+  },
+  "emilyho": {
+    "title": "Product Designer",
+    "name": "Emily Ho"
+  },
+  "evelynku": {
+    "title": "Visual Content Operations Intern",
+    "name": "Evelyn Ku"
+  },
+  "fawnwang": {
+    "title": "Visual Content Curator",
+    "name": "Fawn Wang"
+  },
+  "filipesantos": {
+    "title": "Senior Product Lead - Explore",
+    "name": "Filipe Santos"
+  },
+  "fumitsai": {
+    "title": "Backend Developer",
+    "name": "Fumi Tsai"
+  },
+  "ginahsu": {
+    "title": "User Researcher",
+    "name": "Gina Hsu"
+  },
+  "gracechen": {
+    "title": "Director of Marketing",
+    "name": "Grace Chen"
+  },
+  "gracekuo": {
+    "title": "People Operations Manager",
+    "name": "Grace Kuo"
+  },
+  "haileechen": {
+    "title": "User Support Intern",
+    "name": "Hailee Chen"
+  },
+  "hamishtennent": {
+    "title": "User Researcher",
+    "name": "Hamish Tennent"
+  },
+  "jaimecham": {
+    "title": "CTO",
+    "name": "Jaime Cham"
+  },
+  "jamesyu": {
+    "title": "Backend Developer",
+    "name": "James Yu"
+  },
+  "jessiechen": {
+    "title": "Director of Finance and Operations",
+    "name": "Jessie Chen"
+  },
+  "jjliou": {
+    "title": "Visual Designer",
+    "name": "JJ Liou"
+  },
+  "johsu": {
+    "title": "iOS Developer",
+    "name": "Jo Hsu"
+  },
+  "joannechang": {
+    "title": "Head of Design",
+    "name": "Joanne Chang"
+  },
+  "jocelinho": {
+    "title": "Engineering Manager",
+    "name": "Jocelin Ho"
+  },
+  "jocelynwu": {
+    "title": "Visual Content Curator",
+    "name": "Jocelyn Wu"
+  },
+  "johnfan": {
+    "title": "CEO",
+    "name": "John Fan"
+  },
+  "judechang": {
+    "title": "Operations Specialist",
+    "name": "Jude Chang"
+  },
+  "judylee": {
+    "title": "Operations Manager",
+    "name": "Judy Lee"
+  },
+  "justinruan": {
+    "title": "iOS Developer",
+    "name": "Justin Ruan "
+  },
+  "kalnajar": {
+    "title": "MLOps Engineer",
+    "name": "K Alnajar"
+  },
+  "katherinechen": {
+    "title": "Product Designer",
+    "name": "Katherine Chen"
+  },
+  "kekearif": {
+    "title": "Senior iOS Developer",
+    "name": "Keke Arif"
+  },
+  "kelsychou": {
+    "title": "User Researcher",
+    "name": "Kelsy Chou"
+  },
+  "kelvinchow": {
+    "title": "Product Designer",
+    "name": "Kelvin Chow"
+  },
+  "kerwinchen": {
+    "title": "Product Designer",
+    "name": "Kerwin Chen"
+  },
+  "kobetseng": {
+    "title": "Operations Manager",
+    "name": "Kobe Tseng"
+  },
+  "landicefu": {
+    "title": "Android Developer Lead (Staff)",
+    "name": "Landice Fu"
+  },
+  "laporchen": {
+    "title": "Frontend Developer Intern",
+    "name": "Lapor Chen"
+  },
+  "lauramaurer": {
+    "title": "Consultant",
+    "name": "Laura Maurer"
+  },
+  "laurencejames": {
+    "title": "Operations Specialist",
+    "name": "Laurence James"
+  },
+  "leeheng": {
+    "title": "Frontend Developer",
+    "name": "Lee Heng",
+    "fact": "An Asalato player"
+  },
+  "lewesmitchell": {
+    "title": "User Support Intern",
+    "name": "Lewes Mitchell"
+  },
+  "lilachen": {
+    "title": "Product Testing Specialist",
+    "name": "Lila Chen",
+    "fact": "An Ocarina Player"
+  },
+  "liyuyang": {
+    "title": "Senior Product Manager (PicCollage)",
+    "name": "Liyu Yang"
+  },
+  "luiselin": {
+    "title": "Company Operations Intern",
+    "name": "Luise Lin"
+  },
+  "maggiegau": {
+    "title": "Senior Product Manager (PicCollage)",
+    "name": "Maggie Gau"
+  },
+  "mamiyamazaki": {
+    "title": "Japanese Specialist",
+    "name": "Mami Yamazaki"
+  },
+  "masolin": {
+    "title": "Data Scientist (Staff)",
+    "name": "Maso Lin"
+  },
+  "matachan": {
+    "title": "Freelancer",
+    "name": "Mata Chan"
+  },
+  "matildahuang": {
+    "title": "User Support Intern",
+    "name": "Matilda Huang"
+  },
+  "melodymeenahlimanjaya": {
+    "title": "Testing & Office Intern",
+    "name": "Melody Meenah Limanjaya"
+  },
+  "messiyang": {
+    "title": "Frontend Developer",
+    "name": "Messi Yang",
+    "fact": "Collecting Good Co-Workers"
+  },
+  "micahuang": {
+    "title": "Director for Explore (New Products)",
+    "name": "Mica Huang"
+  },
+  "mingchang": {
+    "title": "Visual Designer",
+    "name": "Ming Chang"
+  },
+  "minnieyuan": {
+    "title": "Marketing Manager",
+    "name": "Minnie Yuan"
+  },
+  "morganchang": {
+    "title": "Product Designer",
+    "name": "Morgan Chang",
+    "fact": "Dancing"
+  },
+  "nagachiang": {
+    "title": "Android Developer",
+    "name": "Naga Chiang"
+  },
+  "nanafu": {
+    "title": "Product Manager -PicCollage App",
+    "name": "Nana Fu"
+  },
+  "naomidonabedian(consultant)": {
+    "title": "Design Consultant",
+    "name": "Naomi Donabedian (Consultant)"
+  },
+  "nicheleli": {
+    "title": "Content Business Manager",
+    "name": "Nichele Li"
+  },
+  "ninadewaal": {
+    "title": "Visual Designer",
+    "name": "Nina de Waal"
+  },
+  "oscarfu": {
+    "title": "Developer Intern",
+    "name": "Oscar Fu"
+  },
+  "palmkaveerat": {
+    "title": "Product Designer",
+    "name": "Palm Kaveerat"
+  },
+  "patrikaradi": {
+    "title": "Android Developer",
+    "name": "Patrik Aradi"
+  },
+  "paulhuang": {
+    "title": "Product Manager",
+    "name": "Paul Huang",
+    "fact": "Surfing"
+  },
+  "petershih": {
+    "title": "iOS Developer",
+    "name": "Peter Shih"
+  },
+  "phoebekuo": {
+    "title": "People Operations Specialist",
+    "name": "Phoebe Kuo"
+  },
+  "racheladiyaya": {
+    "title": "Community Intern",
+    "name": "Rachel Adiyaya"
+  },
+  "raymondwu": {
+    "title": "iOS Developer",
+    "name": "Raymond Wu"
+  },
+  "ricklee": {
+    "title": "Director of Finance",
+    "name": "Rick Lee"
+  },
+  "rinasavistahalim": {
+    "title": "Video Image Processing Engineer",
+    "name": "Rina Savista Halim"
+  },
+  "rom\u00e9oarnault": {
+    "title": "Product Marketer",
+    "name": "Rom\u00e9o Arnault"
+  },
+  "russshepherd": {
+    "title": "Engineering Director",
+    "name": "Russ Shepherd"
+  },
+  "sandrahu": {
+    "title": "User Researcher",
+    "name": "Sandra Hu"
+  },
+  "selinaliu": {
+    "title": "User Support Intern",
+    "name": "Selina Liu"
+  },
+  "shannonhuang": {
+    "title": "MLAD (Generative Models)",
+    "name": "Shannon Huang"
+  },
+  "sherlynma": {
+    "title": "Visual Content Operations Specialist",
+    "name": "Sherlyn Ma"
+  },
+  "sihouyang": {
+    "title": "iOS Developer",
+    "name": "Sih OuYang",
+    "fact": "Making coffee"
+  },
+  "simoncadge": {
+    "title": "Backend Developer",
+    "name": "Simon Cadge"
+  },
+  "simonlee": {
+    "title": "Software Developer",
+    "name": "Simon Lee"
+  },
+  "sol\u00e8negaudois": {
+    "title": "Visual Designer",
+    "name": "Sol\u00e8ne Gaudois"
+  },
+  "soniakao": {
+    "title": "Visual Designer",
+    "name": "Sonia Kao"
+  },
+  "timchen": {
+    "title": "Android Developer",
+    "name": "Tim Chen"
+  },
+  "tinachang": {
+    "title": "Marketing Intern",
+    "name": "Tina Chang"
+  },
+  "ting-kaichang": {
+    "title": "Frontend Developer",
+    "name": "Ting-Kai Chang"
+  },
+  "tinyahuang": {
+    "title": "Product Designer",
+    "name": "Tinya Huang"
+  },
+  "vinaysisodia": {
+    "title": "Lead ML Engineer",
+    "name": "Vinay Sisodia"
+  },
+  "vivitseng": {
+    "title": "Frontend Developer",
+    "name": "Vivi Tseng"
+  },
+  "viviankuo": {
+    "title": "Product Manager(Explore)",
+    "name": "Vivian Kuo"
+  },
+  "vivienneko": {
+    "title": "Video Image Processing Engineer",
+    "name": "Vivienne Ko"
+  },
+  "waychang": {
+    "title": "Product Design Lead",
+    "name": "Way Chang"
+  },
+  "weihangjian": {
+    "title": "Backend Developer Lead",
+    "name": "Weihang Jian"
+  },
+  "wilbertyaury": {
+    "title": "User Support Intern",
+    "name": "Wilbert Yaury"
+  },
+  "willsu": {
+    "title": "Company Operations Intern",
+    "name": "Will Su"
+  },
+  "winniewu": {
+    "title": "Visual Design Operations Assistant",
+    "name": "Winnie Wu"
+  },
+  "yanbinhung": {
+    "title": "Android Developer",
+    "name": "Yanbin Hung"
+  },
+  "yc(yi-chuan)chang": {
+    "title": "ML Engineer",
+    "name": "YC (Yi-Chuan) Chang"
+  },
+  "yolunglu": {
+    "title": "Android Developer",
+    "name": "Yolung Lu"
+  },
+  "yu-tangcheng": {
+    "title": "Product Lead - Explore",
+    "name": "Yu-tang Cheng"
+  },
+  "yujiwong": {
+    "title": "Android Developer",
+    "name": "Yuji Wong"
+  },
+  "yyjimwang": {
+    "title": "iOS Developer Lead",
+    "name": "YY Jim Wang"
+  },
+  "zalmancheng": {
+    "title": "Product Manager",
+    "name": "Zalman Cheng"
+  }
+}
