@@ -24,9 +24,11 @@ const showAllInfo = ref(false)
 const hasNotSelectAnswer = ref(true)
 const isHistoryModelOpen = ref(false)
 const showSpecialEndingImage = ref(false)
+const backgroundColor = ref<'default' | 'correct' | 'wrong'>('default')
 
 // for easier use
 const imageSrc = computed(() => `pd/${selectedPerson.value?.name.toLowerCase().replaceAll(' ', '') || 'not_selected' }/thumbnail.png`)
+const toStandardName = (name: string) => name.toLowerCase().replaceAll(' ', '')
 
 // record for seen members
 const visitedMembers = reactive<string[]>([])
@@ -43,6 +45,7 @@ function selectNewPerson() {
   randomValue.value = Math.floor(Math.random() * (nameArray.value.length - 1))
   if (randomValue.value < 0) 
     return
+  backgroundColor.value = 'default'
   selectedPerson.value =  peopleRecord[nameArray.value[randomValue.value]]
 
   const selectedPersonName = nameArray.value[randomValue.value]
@@ -63,8 +66,10 @@ function onSelectOption(option: string) {
   if (option === selectedPerson.value?.title)  {
     confetti()
     showAllInfo.value = false
+    backgroundColor.value = 'correct'
   }
   else {
+    backgroundColor.value = 'wrong'
     showAllInfo.value = true
   }
 
@@ -76,6 +81,7 @@ function viewMember(name: string) {
   selectedPerson.value = peopleRecord[name]
   showAllInfo.value = true
   isHistoryModelOpen.value = false
+  backgroundColor.value = 'default'
 }
 
 onMounted(() => {
@@ -87,9 +93,9 @@ onMounted(() => {
   <div
     class="w-[100dvw] h-[100dvh] px-4 overflow-hidden"
     :class="{
-      'bg-light-purple-100': randomValue % 3 === 0,
-      'bg-light-green-100': randomValue % 3 === 1,
-      'bg-kinda-pink-200': randomValue % 3 === 2,
+      'bg-light-purple-100': backgroundColor === 'default',
+      'bg-light-green-100': backgroundColor === 'correct',
+      'bg-kinda-pink-200': backgroundColor === 'wrong',
     }"
   >
     <div class="h-full w-full mx-auto md:w-[365px]">
@@ -154,12 +160,12 @@ onMounted(() => {
         <div class="grid grid-cols-3 gap-3 overflow-scroll pb-2">
           <template v-for="person in peopleRecord" :key="person.name">
             <div 
-              v-if="visitedMembers.includes(person.name.toLowerCase().replaceAll(' ', ''))"
+              v-if="visitedMembers.includes(toStandardName(person.name))"
               class="relative w-fit h-fit overflow-hidden cursor-pointer"
-              @click="() => viewMember(person.name.toLowerCase().replaceAll(' ', ''))"
+              @click="() => viewMember(toStandardName(person.name))"
             >
               <Image 
-                :src="`pd/${person.name.toLowerCase().replaceAll(' ', '')}/thumbnail.png`"
+                :src="`pd/${toStandardName(person.name)}/thumbnail.png`"
                 :alt="person.name" 
                 class="border border-[#000] border-solid"
                 img-class="w-24 h-24 object-cover"
