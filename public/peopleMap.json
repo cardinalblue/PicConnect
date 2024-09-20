@@ -22,11 +22,12 @@
   "allenlin": {
     "title": "Machine Learning Intern",
     "name": "Allen Lin",
-    "fact": "Playing fire dance"
+    "fact": "Play fire dance"
   },
   "altheagere": {
     "title": "Community Specialist",
-    "name": "Althea Gere"
+    "name": "Althea Gere",
+    "fact": "Be mean to Kobe"
   },
   "ameliaboomer": {
     "title": "Marketing Manager",
@@ -59,7 +60,7 @@
   "annalasko": {
     "title": "Marketing Intern (New Products)",
     "name": "Anna Lasko",
-    "fact": "Lu rou fan (卤肉饭), paired with tomato scrambled eggs (番茄炒蛋)"
+    "fact": "Eat Lu rou fan (卤肉饭), paired with tomato scrambled eggs (番茄炒蛋)"
   },
   "annaohyama": {
     "title": "Visual Content Curator",
@@ -76,7 +77,7 @@
   "annyyang": {
     "title": "ML Engineer",
     "name": "Anny Yang",
-    "fact": "Collecting Michelin star restaurants around the world"
+    "fact": "Collect Michelin star restaurants around the world"
   },
   "ansenhuang": {
     "title": "Product Manager",
@@ -306,7 +307,7 @@
   "leeheng": {
     "title": "Frontend Developer",
     "name": "Lee Heng",
-    "fact": "An Asalato player"
+    "fact": "Play Asalato"
   },
   "lewesmitchell": {
     "title": "User Support Intern",
@@ -315,7 +316,7 @@
   "lilachen": {
     "title": "Product Testing Specialist",
     "name": "Lila Chen",
-    "fact": "An Ocarina Player"
+    "fact": "Play Ocarina"
   },
   "liyuyang": {
     "title": "Senior Product Manager (PicCollage)",
@@ -347,12 +348,13 @@
   },
   "melodymeenahlimanjaya": {
     "title": "Testing & Office Intern",
-    "name": "Melody Meenah Limanjaya"
+    "name": "Melody Meenah Limanjaya",
+    "fact": "Sing"
   },
   "messiyang": {
     "title": "Frontend Developer",
     "name": "Messi Yang",
-    "fact": "Collecting Good Co-Workers"
+    "fact": "Collect Good Co-Workers"
   },
   "micahuang": {
     "title": "Director for Explore (New Products)",
@@ -369,7 +371,7 @@
   "morganchang": {
     "title": "Product Designer",
     "name": "Morgan Chang",
-    "fact": "Dancing"
+    "fact": "Dance"
   },
   "nagachiang": {
     "title": "Android Developer",
@@ -406,7 +408,7 @@
   "paulhuang": {
     "title": "Product Manager",
     "name": "Paul Huang",
-    "fact": "Surfing"
+    "fact": "Surf"
   },
   "petershih": {
     "title": "iOS Developer",
@@ -459,7 +461,7 @@
   "sihouyang": {
     "title": "iOS Developer",
     "name": "Sih OuYang",
-    "fact": "Making coffee"
+    "fact": "Make coffee"
   },
   "simoncadge": {
     "title": "Backend Developer",
