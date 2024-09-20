@@ -22,7 +22,7 @@ defineProps<{
       <div
         class="text-lg pb-2"
       >
-        And {{ name }} also like to
+        {{ name }} also likes to
       </div>
       <div class="text-3xl roboto-black font-extrabold">
         {{ fact }}
