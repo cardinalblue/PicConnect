@@ -15,6 +15,9 @@ const allJobTitle = new Set(Object.values(peopleRecord).map(obj => obj.title))
 const randomValue = ref(-1)
 const selectedPerson = ref<PeopleObject>()
 
+// game state
+const totalQuestionCount = Object.keys(peopleRecord).filter(name => peopleRecord[name].fact).length
+const correctQuestionCount = ref(0)
 // options
 const leftOption = ref('')
 const rightOption = ref('')
@@ -67,6 +70,7 @@ function onSelectOption(option: string) {
     confetti()
     showAllInfo.value = false
     backgroundColor.value = 'correct'
+    correctQuestionCount.value++
   }
   else {
     backgroundColor.value = 'wrong'
@@ -99,7 +103,7 @@ onMounted(() => {
     }"
   >
     <div class="h-full w-full mx-auto md:w-[365px]">
-      <GameHeader />
+      <GameHeader :correct="correctQuestionCount" :total-question="totalQuestionCount" />
       <!--
     <template v-for="(people, nameKey) in peopleRecord" :key="people.name">
       <div>
