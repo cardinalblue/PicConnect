@@ -6,5 +6,8 @@ export default defineNuxtConfig({
     '@pinia/nuxt',
     '@nuxt/ui',
   ],
+  colorMode: {
+    preference: 'light',
+  },
 })
 
